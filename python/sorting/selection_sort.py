@@ -6,14 +6,26 @@ FOR EACH ITEM:
 
 """
 
-def sort_squence(seq: list, start:int=0) -> list:
-    min_index = start
+def sort_squence(seq: list) -> list:
+
+    def get_minIndex(start_index, seq):
+        min_index = start_index
+
+        for j in range(start_index+1 , len(seq)):
+
+            if seq[min_index] > seq[j]:
+                min_index = j
+
+        return min_index
+
 
     for i in range(len(seq)):
         # find min index
-        for j in range(i+1, len(seq)):
-            if seq[min_index] > seq[j]:
-                min_index = j
+        # for j in range(i+1, len(seq)):
+        #     if seq[min_index] > seq[j]:
+        #         min_index = j
+        min_index = get_minIndex(i, seq)
+        print(min_index)
             
         #swap min_item
         if seq[i]  > seq[min_index]:
