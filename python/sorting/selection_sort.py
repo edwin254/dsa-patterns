@@ -34,3 +34,15 @@ def sort_squence(seq: list) -> list:
 s = [5, 8, 2, 6, 9, 1, 0, 7]
 
 print(sort_squence(s))
+
+# minimum total weight
+# after decreasing the weight of the smallest item
+
+def minimum_total(weights: list) -> int:
+
+    total_weight = 0
+
+    for i in range(len(weights)):
+        total_weight += weights[i]
+
+    return total_weight
