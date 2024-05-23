@@ -85,7 +85,7 @@ function processMatrix($arr) {
         3 => array(4, 3, 2, 1)
         );
 
-
-    echo $json_data;
+    $processMatrix = processMatrix($matrix);
+    echo $processMatrix;
  
 ?>
