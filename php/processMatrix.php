@@ -9,18 +9,19 @@
 */
 function processMatrix($arr) {
 
-        $size = count($arr[$i]);
+    $size = count($arr[$i]);
 
-        function diagonoalSum($size) {
-            $sum = 0;
+    function diagonoalSum() {
+        $sum = 0;
 
-            for ($i = 0; $i < $size; $i++) {
-                $sum += $arr[$i][$i];
-            }
-            return $sum;
-        } //    end diagonalSum
+        for ($i = 0; $i < $size; $i++) {
+            $sum += $arr[$i][$i];
+        }
+        return $sum;
+    } //    end diagonalSum
 
     function rowCount() {
+        /** return number of rows with duplicated elements in a matrix */
         $count = 0;
         $visited = array(); //Associative array to store encountered values
 
@@ -43,6 +44,8 @@ function processMatrix($arr) {
     
 
     function columnCount() {
+        /** return number of COLUMNS with duplicated elements in a matrix */
+
         $count = 0;
         $visited = array(); //Associative array to store encountered values
 
@@ -63,6 +66,26 @@ function processMatrix($arr) {
 
          return $count;
         }
+
+        $diagnaolSum = diagonoalSum(); 
+        $rowCount = rowCount(); 
+        $columnCount = columnCount();
+
+        $data = array($diagnaolSum, $rowCount, $columnCount);
+
+        $json_data = json_encode($data);
+        
+        return $json_data;
     }
+
+    $matrix = array(
+        0 => array(1, 2, 3, 4),
+        1 => array(2, 1, 4, 3),
+        2 => array(3, 4, 1, 2),
+        3 => array(4, 3, 2, 1)
+        );
+
+
+    echo $json_data;
  
 ?>
