@@ -6,8 +6,10 @@
  * 3.the number of columns of the matrix that contain repeated elements.
 
 */
-function processMatrix($arr)
-    {
+function processMatrix($arr) {
+
+        $size = count($arr[$i]);
+
         function diagonoalSum($size) {
             $sum = 0;
 
@@ -19,13 +21,17 @@ function processMatrix($arr)
 
     function rowCount($arr) {
         $count = 0;
-         for ($i = 1; $i < $arr; $i++) {
-            for ($j = 0; $j < count($arr[$i]); $j++) {
-                //  compare current row element with previous element
+        $visited = array(); //Associative array to store encountered values
 
-                if ($arr[$i][$j] == $arr[$i - 1][$j]) {
-                    $count += 1;
-                    continue;
+        // For each element checks if it exists in visited associative array
+         for ($i = 0; $i < $arr; $i++) {
+            for ($j = 0; $j < count($arr[$i]); $j++) {
+
+                if (isset($seen[$value])) {
+                    echo "The row contains duplicate values.";
+                    break; // Exit loop after finding a duplicate
+                  }
+                  $seen[$value] = true;
                 }
             }
          }
