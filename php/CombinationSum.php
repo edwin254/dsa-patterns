@@ -1,5 +1,6 @@
 <?php
 
+
 class Solution {
 
     /**
@@ -27,10 +28,23 @@ class Solution {
             $remaining = $target - $candidates[$i];
             if ($remaining >= 0) {
                 array_push($current, $candidates[$i]); 
-                $this->search($candidates, $candidatesLength, $i, $remaining, $current, $result);
+                $this->traverse($candidates, $candidatesLength, $i, $remaining, $current, $result);
                 array_pop($current); 
             }
         }
     }
 }
+
+$candidates = [2,3,6,7];
+$target = 7;
+// $expectedResult = [[2,2,3],[7]];
+
+$candidates = [2,3,5]; 
+$target = 8;
+
+$result = new Solution();
+$combination = $result->combinationSum($candidates, $target);
+
+print_r($combination);
+
 ?>
