@@ -27,4 +27,8 @@ function eraseOverlapIntervals($intervals)
     return $overlaps;
 }
 }
+
+$intervals = [[1,2],[2,3],[3,4],[1,3]];
+$result = new Solution();
+echo $result->eraseOverlapIntervals($intervals);
 ?>
